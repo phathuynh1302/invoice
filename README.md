@@ -6,8 +6,8 @@ The project has 2 folder branch: client, server. Each folder includes branches: 
 
 Branch master is the summary.
 
-client for frontend developers
-server for backend developers
+- client for frontend developers
+- server for backend developers
 
 How to code and commit? 
 - Step 1: Checkout your developer's name folder branch/ main
