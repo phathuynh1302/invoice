@@ -10,6 +10,7 @@ Branch master is the summary.
 - server for backend developers
 
 How to code and commit? 
+First: You need to update all related branch (Pull commit merged chaneges)
 - Step 1: Checkout your developer's name folder branch/ main
 - Step 2: Merge client/main or server/main to your developer's name folder branch/ main
 - Step 3: After coding, checkout your developer's name folder branch/ dev
