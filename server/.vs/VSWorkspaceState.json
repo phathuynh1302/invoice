@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\server",
+    "\\server\\Controllers"
   ],
   "SelectedNode": "\\server.sln",
   "PreviewInSolutionExplorer": false
