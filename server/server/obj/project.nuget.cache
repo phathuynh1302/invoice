@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "atjVIO/LD42EOTgrNaXSxe1Vw+3moXD3EcvBomHFsJT7NcKnxOQuTecTXX7fz/bsUBUMgWbyk3XaNHhNlBwQMg==",
+  "dgSpecHash": "KkxF1wcjlhb+l0+c/k8m/l8A9OLECViKJnc9dIvfpCv0fr9vQRf7Fa77GUDIFPcbZjbSXfQH1/HIdVxV879GPg==",
   "success": true,
-  "projectFilePath": "F:\\project\\server\\server\\server.csproj",
+  "projectFilePath": "F:\\Documents\\invoice-xlsm-exporter\\server\\server\\server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
