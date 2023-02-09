@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\project\\server\\server\\server.csproj": {}
+    "F:\\Documents\\invoice-xlsm-exporter\\server\\server\\server.csproj": {}
   },
   "projects": {
-    "F:\\project\\server\\server\\server.csproj": {
+    "F:\\Documents\\invoice-xlsm-exporter\\server\\server\\server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\project\\server\\server\\server.csproj",
+        "projectUniqueName": "F:\\Documents\\invoice-xlsm-exporter\\server\\server\\server.csproj",
         "projectName": "server",
-        "projectPath": "F:\\project\\server\\server\\server.csproj",
+        "projectPath": "F:\\Documents\\invoice-xlsm-exporter\\server\\server\\server.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "F:\\project\\server\\server\\obj\\",
+        "outputPath": "F:\\Documents\\invoice-xlsm-exporter\\server\\server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
