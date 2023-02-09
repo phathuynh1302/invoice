@@ -10,4 +10,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="dao\" />
+    <Folder Include="dto\" />
+    <Folder Include="consts\" />
+    <Folder Include="service\" />
+  </ItemGroup>
+
 </Project>
