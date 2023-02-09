@@ -213,11 +213,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\admin\\Desktop\\server\\server\\server.csproj",
+      "projectUniqueName": "F:\\project\\server\\server\\server.csproj",
       "projectName": "server",
-      "projectPath": "C:\\Users\\admin\\Desktop\\server\\server\\server.csproj",
+      "projectPath": "F:\\project\\server\\server\\server.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\admin\\Desktop\\server\\server\\obj\\",
+      "outputPath": "F:\\project\\server\\server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
