@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Inter:wght@400;500;600;700;800;900&display=fallback");
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+
+/* Additional styles */
+@import "additional-styles/utility-patterns.css";
+@import "additional-styles/range-slider.css";
+@import "additional-styles/toggle-switch.css";
+@import "additional-styles/theme.css";
+
+@import "tailwindcss/utilities";
+
+/* Additional Tailwind directives: https://tailwindcss.com/docs/functions-and-directives/#responsive */
+@layer utilities {
+  .rtl {
+    direction: rtl;
+  }
+}
+
+/* See Alpine.js: https://github.com/alpinejs/alpine#x-cloak */
+[x-cloak=""] {
+  display: none;
+}
+
+.ant-upload-list-item {
+  height: 22px !important;
+  background-color: rgb(216, 227, 255);
+  font-size: 18px !important;
+  color: blue;
+}
+
+.anticon {
+  font-size: 20px !important;
+}
+
+.ant-select-selection-placeholder {
+  font-size: large;
+}
+
+.ant-select-selector,
+.ant-select-selection-search-input {
+  height: 50px !important;
+}
