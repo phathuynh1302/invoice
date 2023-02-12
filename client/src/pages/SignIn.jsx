@@ -7,7 +7,10 @@ import HeaderNotAuthenticated from "../partials/HeaderNotAuthenticated";
 
 function SignIn() {
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
+    <div
+      className="flex flex-col min-h-screen overflow-hidden"
+      data-aos="fade-up"
+    >
       {/*  Site header */}
       <HeaderNotAuthenticated />
 

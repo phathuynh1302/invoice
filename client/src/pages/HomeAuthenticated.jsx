@@ -2,20 +2,19 @@ import React from "react";
 
 import Header from "../partials/Header";
 import PageIllustration from "../partials/PageIllustration";
-import HeroHome from "../partials/HeroHome";
 import FeaturesBlocks from "../partials/FeaturesBlocks";
 import FeaturesZigZag from "../partials/FeaturesZigzag";
 import Testimonials from "../partials/Testimonials";
 import Newsletter from "../partials/Newsletter";
 import Banner from "../partials/Banner";
 import Footer from "../partials/Footer";
-import HeaderNotAuthenticated from "../partials/HeaderNotAuthenticated";
+import UploadHome from "../partials/UploadHome";
 
-function Home() {
+function HomeAuthenticated() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       {/*  Site header */}
-      <HeaderNotAuthenticated />
+      <Header />
 
       {/*  Page content */}
       <main className="grow">
@@ -28,7 +27,7 @@ function Home() {
         </div>
 
         {/*  Page sections */}
-        <HeroHome />
+        <UploadHome />
         <FeaturesBlocks />
         <FeaturesZigZag />
         <Testimonials />
@@ -43,4 +42,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomeAuthenticated;

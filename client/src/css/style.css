@@ -35,7 +35,8 @@
 }
 
 .ant-select-selection-placeholder {
-  font-size: large;
+  margin-top: 7px;
+  font-size: 24px;
 }
 
 .ant-select-selector,

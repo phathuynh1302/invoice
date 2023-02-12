@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import PageIllustration from "../partials/PageIllustration";
 import Banner from "../partials/Banner";
 import HeaderNotAuthenticated from "../partials/HeaderNotAuthenticated";
+import { Link } from "react-router-dom";
 
 function SignUp() {
   return (
@@ -22,7 +22,7 @@ function SignUp() {
         </div>
 
         <section className="relative">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6" data-aos="fade-up">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
@@ -138,8 +138,8 @@ function SignUp() {
                     </div>
                   </div>
                   <div className="text-sm text-gray-500 text-center">
-                    I agree to be contacted by Open PRO about this offer as per
-                    the Open PRO{" "}
+                    I agree to be contacted by E-invoice convert PRO and accept{" "}
+                    {}
                     <Link
                       to="#"
                       className="underline text-gray-400 hover:text-gray-200 hover:no-underline transition duration-150 ease-in-out"
@@ -157,9 +157,9 @@ function SignUp() {
                   </div>
                 </form>
                 <div className="text-gray-400 text-center mt-6">
-                  Already using Open PRO?{" "}
+                  Already have account?{" "}
                   <Link
-                    to="signin"
+                    to="/signin"
                     className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out"
                   >
                     Sign in

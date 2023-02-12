@@ -36,7 +36,7 @@ function Header() {
   });
 
   return (
-    <header className="absolute z-30 w-full bg-gray-800">
+    <header className="absolute z-30 w-full  bg-slate-800">
       <div className="max-w-6xl px-4 mx-auto sm:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Site branding */}
@@ -57,28 +57,13 @@ function Header() {
             <ul className="flex flex-wrap items-center justify-end grow">
               <li>
                 <Link
-                  to="/features"
+                  to="/history"
                   className="flex items-center px-4 py-2 text-gray-300 transition duration-150 ease-in-out hover:text-gray-200"
                 >
-                  Features
+                  History
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/pricing"
-                  className="flex items-center px-4 py-2 text-gray-300 transition duration-150 ease-in-out hover:text-gray-200"
-                >
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/blog"
-                  className="flex items-center px-4 py-2 text-gray-300 transition duration-150 ease-in-out hover:text-gray-200"
-                >
-                  Blog
-                </Link>
-              </li>
+
               <li>
                 <Link
                   to="/about"
@@ -174,28 +159,13 @@ function Header() {
               <ul className="px-4 py-2 bg-gray-800">
                 <li>
                   <Link
-                    to="/features"
+                    to="/history"
                     className="flex py-2 text-gray-300 hover:text-gray-200"
                   >
-                    Features
+                    History
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    to="/pricing"
-                    className="flex py-2 text-gray-300 hover:text-gray-200"
-                  >
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/blog"
-                    className="flex py-2 text-gray-300 hover:text-gray-200"
-                  >
-                    Blog
-                  </Link>
-                </li>
+
                 <li>
                   <Link
                     to="/about"
@@ -232,22 +202,6 @@ function Header() {
                       </Link>
                     </li>
                   </ul>
-                </li>
-                <li>
-                  <Link
-                    to="/signin"
-                    className="flex justify-center w-full py-2 font-medium text-purple-600 hover:text-gray-200"
-                  >
-                    Sign in
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/signup"
-                    className="inline-flex items-center justify-center w-full px-4 py-2 my-2 font-medium text-white transition duration-150 ease-in-out bg-purple-600 border border-transparent rounded-sm hover:bg-purple-700"
-                  >
-                    Sign up
-                  </Link>
                 </li>
               </ul>
             </nav>

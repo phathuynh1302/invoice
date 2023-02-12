@@ -5,24 +5,33 @@ import MisaLogo from "../images/Logo_MISA.svg";
 import FastLogo from "../images/Fast.png";
 
 import {
+  CheckOutlined,
   ExceptionOutlined,
   InboxOutlined,
-  LikeOutlined,
   LoadingOutlined,
 } from "@ant-design/icons";
 import ReactiveButton from "reactive-button";
+import axios from "axios";
+import { apiUrl } from "../constants";
 
-function HeroHome() {
+function UploadHome() {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
   const [state, setState] = useState("idle");
+  const [file, setFile] = useState(null);
 
   const onClickHandler = () => {
     setState("loading");
-
+    let formdata = new FormData();
+    formdata.append("My File Uploaded", file);
+    axios({
+      url: `${apiUrl}/`,
+      method: "POST",
+      data: formdata,
+    }).then((res) => {});
     // send an HTTP request
     setTimeout(() => {
       setState("success");
-    }, 2000);
+    }, 3000);
   };
   const props = {
     name: "file",
@@ -36,6 +45,7 @@ function HeroHome() {
     action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
     onChange(info) {
       const { status } = info.file;
+      setFile(info.file);
       if (status !== "uploading") {
         console.log(info.file, info.fileList);
       }
@@ -112,87 +122,95 @@ function HeroHome() {
             </p>
           </div>
           <div
-            class="mr-auto w-5/5  text-center align-middle "
+            className="mr-auto w-5/5  text-center align-middle "
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <div class="container bg-slate-100 p-5 rounded-lg">
-              <h1 className="text-slate-900 tracking-wider font-bold pb-3 text-xl">
-                Upload a file
-              </h1>
-              <div class="bg-slate-100 rounded-md p-3">
-                <div class="border-dashed border-4 border-slate-400 p-5 center">
-                  <Dragger {...props}>
-                    <p className="ant-upload-drag-icon">
-                      <InboxOutlined />
-                    </p>
-                    <p className="ant-upload-text">
-                      Click or drag file to this area to upload
-                    </p>
-                    <p className="ant-upload-hint">
-                      Support for a single or bulk upload. Strictly prohibit
-                      from uploading company data or other band files
-                    </p>
-                  </Dragger>
+            <form>
+              <div className="container bg-slate-100 p-5 rounded-lg">
+                <h1 className="text-slate-900 tracking-wider font-bold pb-3 text-xl">
+                  Upload a file
+                </h1>
+                <div className="bg-slate-100 rounded-md p-3">
+                  <div className="border-dashed border-4 border-slate-400 p-5 center">
+                    <Dragger {...props}>
+                      <p className="ant-upload-drag-icon">
+                        <InboxOutlined />
+                      </p>
+                      <p className="ant-upload-text">
+                        Click or drag file to this area to upload
+                      </p>
+                      <p className="ant-upload-hint">
+                        Support for a single or bulk upload. Strictly prohibit
+                        from uploading company data or other band files
+                      </p>
+                    </Dragger>
+                  </div>
+                  <Select
+                    className="mt-4 w-full "
+                    showSearch
+                    placeholder="Select a template"
+                    optionFilterProp="children"
+                    onChange={onChange}
+                    onSearch={onSearch}
+                    filterOption={(input, option) =>
+                      (option?.label ?? "")
+                        .toLowerCase()
+                        .includes(input.toLowerCase())
+                    }
+                    options={[
+                      {
+                        value: "misa",
+                        label: (
+                          <img src={MisaLogo} width="100px" height="50px" />
+                        ),
+                      },
+                      {
+                        value: "fast",
+                        label: (
+                          <img src={FastLogo} width="100px" height="50px" />
+                        ),
+                      },
+                      {
+                        value: "bravo",
+                        label: (
+                          <img src={MisaLogo} width="100px" height="50px" />
+                        ),
+                      },
+                    ]}
+                  />
+                  <ReactiveButton
+                    className="mt-2 rounded-lg w-96"
+                    buttonState={state}
+                    onClick={onClickHandler}
+                    color={"primary"}
+                    idleText={"Convert"}
+                    loadingText={
+                      <>
+                        <LoadingOutlined /> Loading
+                      </>
+                    }
+                    successText={
+                      <>
+                        <CheckOutlined /> Success
+                      </>
+                    }
+                    errorText={
+                      <>
+                        <ExceptionOutlined /> Error
+                      </>
+                    }
+                    type={"button"}
+                    style={{
+                      borderRadius: "8px",
+                    }}
+                    width={280}
+                    size={"normal"}
+                    height={40}
+                  />
                 </div>
-                <Select
-                  className="mt-4 w-full "
-                  showSearch
-                  placeholder="Select a template"
-                  optionFilterProp="children"
-                  onChange={onChange}
-                  onSearch={onSearch}
-                  filterOption={(input, option) =>
-                    (option?.label ?? "")
-                      .toLowerCase()
-                      .includes(input.toLowerCase())
-                  }
-                  options={[
-                    {
-                      value: "misa",
-                      label: <img src={MisaLogo} width="100px" height="50px" />,
-                    },
-                    {
-                      value: "fast",
-                      label: <img src={FastLogo} width="100px" height="50px" />,
-                    },
-                    {
-                      value: "bravo",
-                      label: <img src={MisaLogo} width="100px" height="50px" />,
-                    },
-                  ]}
-                />
-                <ReactiveButton
-                  className="mt-2 rounded-lg w-96"
-                  buttonState={state}
-                  onClick={onClickHandler}
-                  color={"primary"}
-                  idleText={"Convert"}
-                  loadingText={
-                    <>
-                      <LoadingOutlined /> Loading
-                    </>
-                  }
-                  successText={
-                    <>
-                      <LikeOutlined /> Success
-                    </>
-                  }
-                  errorText={
-                    <>
-                      <ExceptionOutlined /> Error
-                    </>
-                  }
-                  type={"button"}
-                  style={{
-                    borderRadius: "8px",
-                  }}
-                  width={280}
-                  size={"normal"}
-                  height={40}
-                />
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -200,4 +218,4 @@ function HeroHome() {
   );
 }
 
-export default HeroHome;
+export default UploadHome;

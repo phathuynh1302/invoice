@@ -8,19 +8,36 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
+    "@coreui/chartjs": "^3.0.0",
+    "@coreui/coreui": "^4.2.1",
+    "@coreui/icons": "^2.1.0",
+    "@coreui/icons-react": "^2.1.0",
+    "@coreui/react": "^4.3.1",
+    "@coreui/react-chartjs": "^2.1.0",
+    "@coreui/utils": "^1.3.1",
     "@tailwindcss/forms": "^0.5.3",
     "antd": "^5.2.0",
     "aos": "^3.0.0-beta.6",
+    "axios": "^1.3.2",
+    "chart.js": "^3.9.1",
+    "classnames": "^2.3.1",
+    "core-js": "^3.24.1",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-app-polyfill": "^3.0.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.0.2",
     "react-router-dom": "^6.8.1",
     "react-transition-group": "^4.4.5",
-    "reactive-button": "^1.3.13"
+    "reactive-button": "^1.3.13",
+    "redux": "^4.2.0",
+    "simplebar-react": "^2.4.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
+    "sass": "^1.54.4",
     "tailwindcss": "^3.2.6",
     "vite": "^4.1.1"
   }

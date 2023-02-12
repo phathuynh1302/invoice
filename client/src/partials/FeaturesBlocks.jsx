@@ -11,8 +11,8 @@ function FeaturesBlocks() {
               The home of easy and efficient data conversion.
             </h2>
             <p className="text-xl text-gray-400">
-              We offer a simple and effective solution to convert your Microsoft
-              Excel spreadsheets into XML files, so you can easily store,
+              We offer a simple and effective solution to convert your XML file
+              spreadsheets into Microsoft Excel files, so you can easily store,
               manage, and share your data.
             </p>
           </div>
