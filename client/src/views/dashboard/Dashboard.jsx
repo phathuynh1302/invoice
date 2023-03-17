@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import moment from "moment";
 
 import {
   CAvatar,
@@ -7,226 +8,394 @@ import {
   CCard,
   CCardBody,
   CCardFooter,
-  CCardHeader,
   CCol,
-  CProgress,
+  CProgressBar,
   CRow,
-  CTable,
-  CTableBody,
-  CTableDataCell,
-  CTableHead,
-  CTableHeaderCell,
-  CTableRow,
 } from "@coreui/react";
-import { CChartLine } from "@coreui/react-chartjs";
-import { getStyle, hexToRgba } from "@coreui/utils";
-import CIcon from "@coreui/icons-react";
-import {
-  cibCcAmex,
-  cibCcApplePay,
-  cibCcMastercard,
-  cibCcPaypal,
-  cibCcStripe,
-  cibCcVisa,
-  cibGoogle,
-  cibFacebook,
-  cibLinkedin,
-  cifBr,
-  cifEs,
-  cifFr,
-  cifIn,
-  cifPl,
-  cifUs,
-  cibTwitter,
-  cilCloudDownload,
-  cilPeople,
-  cilUser,
-  cilUserFemale,
-} from "@coreui/icons";
+import avatar from "../../images/user.png";
+import { Line } from "@ant-design/charts";
 
-import avatar1 from "../../assets/images/avatars/1.jpg";
-import avatar2 from "../../assets/images/avatars/2.jpg";
-import avatar3 from "../../assets/images/avatars/3.jpg";
-import avatar4 from "../../assets/images/avatars/4.jpg";
-import avatar5 from "../../assets/images/avatars/5.jpg";
-import avatar6 from "../../assets/images/avatars/6.jpg";
+import { Button, Col, Input, notification, Row, Space, Table } from "antd";
+import { AuthContext } from "../../contexts/AuthContext";
+import axios from "axios";
+import { cilPeople } from "@coreui/icons";
+import CIcon from "@coreui/icons-react";
+import { CloseCircleFilled, SearchOutlined } from "@ant-design/icons";
 
 const Dashboard = () => {
-  const random = (min, max) =>
-    Math.floor(Math.random() * (max - min + 1) + min);
+  const searchInput = useRef(null);
+  const [searchedColumn, setSearchedColumn] = useState("");
+  const [data, setData] = useState([]);
 
-  const progressExample = [
-    { title: "Visits", value: "29.703 Users", percent: 40, color: "success" },
-    { title: "Unique", value: "24.093 Users", percent: 20, color: "info" },
+  const [api, contextHolder] = notification.useNotification();
+  const [allUser, setAllUser] = useState([]);
+  const [history, setHistory] = useState([]);
+  const [feedback, setFeedback] = useState([]);
+
+  useEffect(() => {
+    async function getAllUser() {
+      const response = await axios.get(
+        "https://localhost:44327/api/User/getUsers"
+      );
+      const users = response.data.data.map((item, index) => ({
+        ...item,
+        createdDay: item.createdDay.slice(0, 10),
+      }));
+      setAllUser(users);
+
+      const res = await axios.get(
+        "https://localhost:44327/api/Invoice/getInvoices"
+      );
+      const histories = res.data.data.map((item, index) => ({
+        ...item,
+        importedDate: item.importedDate.slice(0, 10),
+      }));
+      setHistory(histories);
+      const r = await axios.get(
+        "https://localhost:44327/api/User/getAllFeedBack"
+      );
+
+      const feedbacks = r.data.data
+        .sort((a, b) => {
+          const dateA = new Date(a.dateCommnet);
+          const dateB = new Date(b.dateCommnet);
+          return dateB - dateA;
+        })
+        .map((item) => ({
+          avatar: { src: avatar, status: "success" },
+          username: item.username,
+          message: item.commnent,
+          // activity: new Date(item.dateCommnet).toLocaleString(),
+          activity:
+            Math.floor((new Date() - new Date(item.dateCommnet)) / 1000) < 60
+              ? `${Math.floor(
+                  (new Date() - new Date(item.dateCommnet)) / 1000
+                )} seconds ago`
+              : Math.floor((new Date() - new Date(item.dateCommnet)) / 1000) <
+                3600
+              ? `${Math.floor(
+                  (new Date() - new Date(item.dateCommnet)) / (1000 * 60)
+                )} minutes ago`
+              : Math.floor((new Date() - new Date(item.dateCommnet)) / 1000) <
+                86400
+              ? `${Math.floor(
+                  (new Date() - new Date(item.dateCommnet)) / (1000 * 60 * 60)
+                )} hours ago`
+              : `${Math.floor(
+                  (new Date() - new Date(item.dateCommnet)) /
+                    (1000 * 60 * 60 * 24)
+                )} days ago`,
+        }));
+      setFeedback(feedbacks);
+      const usageByDate = histories.reduce((acc, item) => {
+        const { importedDate } = item;
+        acc[importedDate] = acc[importedDate] ? acc[importedDate] + 1 : 1;
+        return acc;
+      }, {});
+      const usageChartData = Object.entries(usageByDate).map(
+        ([year, value]) => ({
+          year,
+          value,
+          category: "Usage",
+        })
+      );
+      setData(usageChartData);
+    }
+    getAllUser();
+  }, []);
+  const {
+    showToast: { show, message, type },
+    setShowToast,
+  } = useContext(AuthContext);
+  useEffect(() => {
+    if (show) {
+      api[type]({
+        message: message,
+        placement: "bottomRight",
+      });
+      setShowToast({ show: false, message: "", type: null });
+    }
+  }, [show]);
+
+  const handleSearch = (selectedKeys, confirm, dataIndex) => {
+    confirm();
+    setSearchText(selectedKeys[0]);
+    setSearchedColumn(dataIndex);
+  };
+  const handleReset = (clearFilters, confirm, dataIndex) => {
+    clearFilters();
+    confirm();
+    setSearchText("");
+    setSearchedColumn(dataIndex);
+  };
+  const getColumnSearchProps = (dataIndex) => ({
+    filterDropdown: ({
+      setSelectedKeys,
+      selectedKeys,
+      confirm,
+      clearFilters,
+      close,
+    }) => (
+      <div
+        style={{
+          padding: 8,
+        }}
+        onKeyDown={(e) => e.stopPropagation()}
+      >
+        <Input
+          ref={searchInput}
+          placeholder={`Search ${dataIndex}`}
+          value={selectedKeys[0]}
+          onChange={(e) =>
+            setSelectedKeys(e.target.value ? [e.target.value] : [])
+          }
+          onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
+          style={{
+            marginBottom: 8,
+            display: "block",
+          }}
+        />
+        <Space>
+          <Button
+            type="primary"
+            className="bg-gray-400"
+            onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
+            icon={
+              <SearchOutlined
+                className="text-gray-100"
+                style={{ verticalAlign: "0em" }}
+              />
+            }
+            size="small"
+            style={{
+              width: 90,
+            }}
+          >
+            Search
+          </Button>
+          <Button
+            onClick={() =>
+              clearFilters && handleReset(clearFilters, confirm, dataIndex)
+            }
+            size="small"
+            style={{
+              width: 90,
+            }}
+          >
+            Reset
+          </Button>
+
+          <Button
+            type="link"
+            size="small"
+            onClick={() => {
+              close();
+            }}
+          >
+            <CloseCircleFilled style={{ verticalAlign: "0em" }} />
+          </Button>
+        </Space>
+      </div>
+    ),
+    filterIcon: (filtered) => (
+      <SearchOutlined
+        style={{
+          color: filtered ? "#1890ff" : undefined,
+        }}
+      />
+    ),
+    onFilter: (value, record) =>
+      record[dataIndex].toString().toLowerCase().includes(value.toLowerCase()),
+    onFilterDropdownOpenChange: (visible) => {
+      if (visible) {
+        setTimeout(() => searchInput.current?.select(), 100);
+      }
+    },
+    render: (text) =>
+      searchedColumn === dataIndex ? (
+        <Highlighter
+          highlightStyle={{
+            backgroundColor: "#ffc069",
+            padding: 0,
+          }}
+          searchWords={[searchText]}
+          autoEscape
+          textToHighlight={text ? text.toString() : ""}
+        />
+      ) : (
+        text
+      ),
+  });
+  const config = {
+    data,
+    xField: "year",
+    yField: "value",
+    seriesField: "category",
+
+    yAxis: {
+      label: {
+        // 数值格式化为千分位
+        formatter: (v) =>
+          `${v}`.replace(/\d{1,3}(?=(\d{3})+$)/g, (s) => `${s},`),
+      },
+    },
+    legend: {
+      position: "top",
+    },
+
+    smooth: true,
+    // @TODO 后续会换一种动画方式
+    animation: {
+      appear: {
+        animation: "path-in",
+        duration: 5000,
+      },
+    },
+  };
+  const downloadImage = () => {
+    chart?.downloadImage();
+  };
+  const columns = [
     {
-      title: "Pageviews",
-      value: "78.706 Views",
-      percent: 60,
+      title: <CIcon icon={cilPeople} />,
+      dataIndex: "avatar",
+      width: "10%",
+      render: (image) => (
+        <CAvatar size="md" src={image.src} status={image.status} />
+      ),
+    },
+    {
+      title: "User",
+      dataIndex: "username",
+      width: "20%",
+      ...getColumnSearchProps("username"),
+    },
+    {
+      title: "Message",
+      dataIndex: "message",
+      width: "40%",
+    },
+    {
+      title: "Activity",
+      dataIndex: "activity",
+      width: "20%",
+      key: "activity",
+    },
+  ];
+  const progressExample = [
+    {
+      title: "All Users",
+      value: allUser.length,
+      percent: 40,
+      color: "success",
+    },
+    {
+      title: "New Users",
+      value: allUser.filter(
+        (user) => user.createdDay === new Date().toISOString().slice(0, 10)
+      ).length,
+      percent: (
+        (allUser.filter(
+          (user) => user.createdDay === new Date().toISOString().slice(0, 10)
+        ).length /
+          allUser.length) *
+        100
+      ).toFixed(2),
+      color: "danger",
+    },
+    {
+      title: "Usage",
+      value: history.length,
+      percent: 20,
+      color: "info",
+    },
+    {
+      title: "Usage Today",
+      value: history.filter(
+        (item) => item.importedDate === new Date().toISOString().slice(0, 10)
+      ).length,
+      percent: (
+        (history.filter(
+          (item) => item.importedDate === new Date().toISOString().slice(0, 10)
+        ).length *
+          100) /
+        history.length
+      ).toFixed(2),
+      color: "info",
+    },
+    {
+      title: "Feedback",
+      value: feedback.length,
       color: "warning",
     },
-    { title: "New Users", value: "22.123 Users", percent: 80, color: "danger" },
     {
-      title: "Bounce Rate",
-      value: "Average Rate",
-      percent: 40.15,
-      color: "primary",
-    },
-  ];
+      title: "New Feedback",
+      value: feedback.filter((item) => {
+        const activityDate = new Date();
+        const timeUnits = {
+          minutes: 60000,
+          hours: 3600000,
+          days: 86400000,
+          seconds: 1000,
+        };
 
-  const progressGroupExample1 = [
-    { title: "Monday", value1: 34, value2: 78 },
-    { title: "Tuesday", value1: 56, value2: 94 },
-    { title: "Wednesday", value1: 12, value2: 67 },
-    { title: "Thursday", value1: 43, value2: 91 },
-    { title: "Friday", value1: 22, value2: 73 },
-    { title: "Saturday", value1: 53, value2: 82 },
-    { title: "Sunday", value1: 9, value2: 69 },
-  ];
+        const [amount, unit] = item.activity.split(" ");
+        const millisecondsAgo = amount * timeUnits[unit];
 
-  const progressGroupExample2 = [
-    { title: "Male", icon: cilUser, value: 53 },
-    { title: "Female", icon: cilUserFemale, value: 43 },
-  ];
+        activityDate.setTime(Date.now() - millisecondsAgo);
 
-  const progressGroupExample3 = [
-    { title: "Organic Search", icon: cibGoogle, percent: 56, value: "191,235" },
-    { title: "Facebook", icon: cibFacebook, percent: 15, value: "51,223" },
-    { title: "Twitter", icon: cibTwitter, percent: 11, value: "37,564" },
-    { title: "LinkedIn", icon: cibLinkedin, percent: 8, value: "27,319" },
-  ];
+        return activityDate >= new Date(Date.now() - timeUnits["days"]);
+      }).length,
+      percent: (
+        (feedback.filter((item) => {
+          const activityDate = new Date();
+          const timeUnits = {
+            minutes: 60000,
+            hours: 3600000,
+            days: 86400000,
+            seconds: 1000,
+          };
 
-  const tableExample = [
-    {
-      avatar: { src: avatar1, status: "success" },
-      user: {
-        name: "Yiorgos Avraamu",
-        new: true,
-        registered: "Jan 1, 2021",
-      },
-      country: { name: "USA", flag: cifUs },
-      usage: {
-        value: 50,
-        period: "Jun 11, 2021 - Jul 10, 2021",
-        color: "success",
-      },
-      payment: { name: "Mastercard", icon: cibCcMastercard },
-      activity: "10 sec ago",
-    },
-    {
-      avatar: { src: avatar2, status: "danger" },
-      user: {
-        name: "Avram Tarasios",
-        new: false,
-        registered: "Jan 1, 2021",
-      },
-      country: { name: "Brazil", flag: cifBr },
-      usage: {
-        value: 22,
-        period: "Jun 11, 2021 - Jul 10, 2021",
-        color: "info",
-      },
-      payment: { name: "Visa", icon: cibCcVisa },
-      activity: "5 minutes ago",
-    },
-    {
-      avatar: { src: avatar3, status: "warning" },
-      user: { name: "Quintin Ed", new: true, registered: "Jan 1, 2021" },
-      country: { name: "India", flag: cifIn },
-      usage: {
-        value: 74,
-        period: "Jun 11, 2021 - Jul 10, 2021",
-        color: "warning",
-      },
-      payment: { name: "Stripe", icon: cibCcStripe },
-      activity: "1 hour ago",
-    },
-    {
-      avatar: { src: avatar4, status: "secondary" },
-      user: { name: "Enéas Kwadwo", new: true, registered: "Jan 1, 2021" },
-      country: { name: "France", flag: cifFr },
-      usage: {
-        value: 98,
-        period: "Jun 11, 2021 - Jul 10, 2021",
-        color: "danger",
-      },
-      payment: { name: "PayPal", icon: cibCcPaypal },
-      activity: "Last month",
-    },
-    {
-      avatar: { src: avatar5, status: "success" },
-      user: {
-        name: "Agapetus Tadeáš",
-        new: true,
-        registered: "Jan 1, 2021",
-      },
-      country: { name: "Spain", flag: cifEs },
-      usage: {
-        value: 22,
-        period: "Jun 11, 2021 - Jul 10, 2021",
-        color: "primary",
-      },
-      payment: { name: "Google Wallet", icon: cibCcApplePay },
-      activity: "Last week",
-    },
-    {
-      avatar: { src: avatar6, status: "danger" },
-      user: {
-        name: "Friderik Dávid",
-        new: true,
-        registered: "Jan 1, 2021",
-      },
-      country: { name: "Poland", flag: cifPl },
-      usage: {
-        value: 43,
-        period: "Jun 11, 2021 - Jul 10, 2021",
-        color: "success",
-      },
-      payment: { name: "Amex", icon: cibCcAmex },
-      activity: "Last week",
+          const [amount, unit] = item.activity.split(" ");
+          const millisecondsAgo = amount * timeUnits[unit];
+
+          activityDate.setTime(Date.now() - millisecondsAgo);
+
+          return activityDate >= new Date(Date.now() - timeUnits["days"]);
+        }).length *
+          100) /
+        feedback.length
+      ).toFixed(2),
+      color: "warning",
     },
   ];
 
   return (
     <>
       <CCard className="mb-4">
+        {contextHolder}
         <CCardBody>
           <CRow>
             <CCol sm={5}>
               <h4 id="traffic" className="card-title mb-0">
                 Traffic
               </h4>
-              <div className="small text-medium-emphasis">
-                January - July 2021
-              </div>
-            </CCol>
-            <CCol sm={7} className="d-none d-md-block">
-              <CButton color="primary" className="float-end">
-                <CIcon icon={cilCloudDownload} />
-              </CButton>
-              <CButtonGroup className="float-end me-3">
-                {["Day", "Month", "Year"].map((value) => (
-                  <CButton
-                    color="outline-secondary"
-                    key={value}
-                    className="mx-0"
-                    active={value === "Month"}
-                  >
-                    {value}
-                  </CButton>
-                ))}
-              </CButtonGroup>
             </CCol>
           </CRow>
         </CCardBody>
         <CCardFooter>
-          <CRow xs={{ cols: 1 }} md={{ cols: 5 }} className="text-center">
+          <CRow xs={{ cols: 1 }} md={{ cols: 6 }} className="text-center">
             {progressExample.map((item, index) => (
               <CCol className="mb-sm-2 mb-0" key={index}>
                 <div className="text-medium-emphasis">{item.title}</div>
                 <strong>
-                  {item.value} ({item.percent}%)
+                  {item.value}
+                  {item.title !== "Feedback" &&
+                    item.title !== "All Users" &&
+                    item.title !== "Usage" && <> ({item.percent}%)</>}
                 </strong>
-                <CProgress
+
+                <CProgressBar
                   thin
                   className="mt-2"
                   color={item.color}
@@ -241,179 +410,28 @@ const Dashboard = () => {
       <CRow>
         <CCol xs>
           <CCard className="mb-4">
-            <CCardHeader>Traffic {" & "} Sales</CCardHeader>
+            {/* <CCardHeader>Usage </CCardHeader> */}
             <CCardBody>
-              <CRow>
-                <CCol xs={12} md={6} xl={6}>
-                  <CRow>
-                    <CCol sm={6}>
-                      <div className="border-start border-start-4 border-start-info py-1 px-3">
-                        <div className="text-medium-emphasis small">
-                          New Clients
-                        </div>
-                        <div className="fs-5 fw-semibold">9,123</div>
-                      </div>
-                    </CCol>
-                    <CCol sm={6}>
-                      <div className="border-start border-start-4 border-start-danger py-1 px-3 mb-3">
-                        <div className="text-medium-emphasis small">
-                          Recurring Clients
-                        </div>
-                        <div className="fs-5 fw-semibold">22,643</div>
-                      </div>
-                    </CCol>
-                  </CRow>
-
-                  <hr className="mt-0" />
-                  {progressGroupExample1.map((item, index) => (
-                    <div className="progress-group mb-4" key={index}>
-                      <div className="progress-group-prepend">
-                        <span className="text-medium-emphasis small">
-                          {item.title}
-                        </span>
-                      </div>
-                      <div className="progress-group-bars">
-                        <CProgress thin color="info" value={item.value1} />
-                        <CProgress thin color="danger" value={item.value2} />
-                      </div>
-                    </div>
-                  ))}
-                </CCol>
-
-                <CCol xs={12} md={6} xl={6}>
-                  <CRow>
-                    <CCol sm={6}>
-                      <div className="border-start border-start-4 border-start-warning py-1 px-3 mb-3">
-                        <div className="text-medium-emphasis small">
-                          Pageviews
-                        </div>
-                        <div className="fs-5 fw-semibold">78,623</div>
-                      </div>
-                    </CCol>
-                    <CCol sm={6}>
-                      <div className="border-start border-start-4 border-start-success py-1 px-3 mb-3">
-                        <div className="text-medium-emphasis small">
-                          Organic
-                        </div>
-                        <div className="fs-5 fw-semibold">49,123</div>
-                      </div>
-                    </CCol>
-                  </CRow>
-
-                  <hr className="mt-0" />
-
-                  {progressGroupExample2.map((item, index) => (
-                    <div className="progress-group mb-4" key={index}>
-                      <div className="progress-group-header">
-                        <CIcon className="me-2" icon={item.icon} size="lg" />
-                        <span>{item.title}</span>
-                        <span className="ms-auto fw-semibold">
-                          {item.value}%
-                        </span>
-                      </div>
-                      <div className="progress-group-bars">
-                        <CProgress thin color="warning" value={item.value} />
-                      </div>
-                    </div>
-                  ))}
-
-                  <div className="mb-5"></div>
-
-                  {progressGroupExample3.map((item, index) => (
-                    <div className="progress-group" key={index}>
-                      <div className="progress-group-header">
-                        <CIcon className="me-2" icon={item.icon} size="lg" />
-                        <span>{item.title}</span>
-                        <span className="ms-auto fw-semibold">
-                          {item.value}{" "}
-                          <span className="text-medium-emphasis small">
-                            ({item.percent}%)
-                          </span>
-                        </span>
-                      </div>
-                      <div className="progress-group-bars">
-                        <CProgress thin color="success" value={item.percent} />
-                      </div>
-                    </div>
-                  ))}
-                </CCol>
-              </CRow>
-
-              <br />
-
-              <CTable align="middle" className="mb-0 border" hover responsive>
-                <CTableHead color="light">
-                  <CTableRow>
-                    <CTableHeaderCell className="text-center">
-                      <CIcon icon={cilPeople} />
-                    </CTableHeaderCell>
-                    <CTableHeaderCell>User</CTableHeaderCell>
-                    <CTableHeaderCell className="text-center">
-                      Country
-                    </CTableHeaderCell>
-                    <CTableHeaderCell>Usage</CTableHeaderCell>
-                    <CTableHeaderCell className="text-center">
-                      Payment Method
-                    </CTableHeaderCell>
-                    <CTableHeaderCell>Activity</CTableHeaderCell>
-                  </CTableRow>
-                </CTableHead>
-                <CTableBody>
-                  {tableExample.map((item, index) => (
-                    <CTableRow v-for="item in tableItems" key={index}>
-                      <CTableDataCell className="text-center">
-                        <CAvatar
-                          size="md"
-                          src={item.avatar.src}
-                          status={item.avatar.status}
-                        />
-                      </CTableDataCell>
-                      <CTableDataCell>
-                        <div>{item.user.name}</div>
-                        <div className="small text-medium-emphasis">
-                          <span>{item.user.new ? "New" : "Recurring"}</span> |
-                          Registered: {item.user.registered}
-                        </div>
-                      </CTableDataCell>
-                      <CTableDataCell className="text-center">
-                        <CIcon
-                          size="xl"
-                          icon={item.country.flag}
-                          title={item.country.name}
-                        />
-                      </CTableDataCell>
-                      <CTableDataCell>
-                        <div className="clearfix">
-                          <div className="float-start">
-                            <strong>{item.usage.value}%</strong>
-                          </div>
-                          <div className="float-end">
-                            <small className="text-medium-emphasis">
-                              {item.usage.period}
-                            </small>
-                          </div>
-                        </div>
-                        <CProgress
-                          thin
-                          color={item.usage.color}
-                          value={item.usage.value}
-                        />
-                      </CTableDataCell>
-                      <CTableDataCell className="text-center">
-                        <CIcon size="xl" icon={item.payment.icon} />
-                      </CTableDataCell>
-                      <CTableDataCell>
-                        <div className="small text-medium-emphasis">
-                          Last login
-                        </div>
-                        <strong>{item.activity}</strong>
-                      </CTableDataCell>
-                    </CTableRow>
-                  ))}
-                </CTableBody>
-              </CTable>
+              <Row>
+                <Col span={24}>
+                  <Line {...config} />
+                </Col>
+              </Row>
             </CCardBody>
           </CCard>
+        </CCol>
+      </CRow>
+      <CRow>
+        <CCol xs>
+          <CCard>
+            <CCardBody>
+              <Table
+                columns={columns}
+                dataSource={feedback}
+                pagination={{ pageSize: 10 }}
+              />
+            </CCardBody>
+          </CCard>{" "}
         </CCol>
       </CRow>
     </>

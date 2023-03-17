@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HoaDonDienTu>
+   <HoaDon id="data">
+      <ThongTinHoaDon>
+         <SellerAppRecordId>82927AB7-97FE-4A34-A94C-9D4E76A2A903</SellerAppRecordId>
+         <TenHoaDon>Hóa đơn giá trị gia tăng</TenHoaDon>
+         <LoaiHoaDon>1</LoaiHoaDon>
+         <MauSo>01GTKT0/001</MauSo>
+         <Kyhieu>AA/20E</Kyhieu>
+         <SoHoaDon>0000007</SoHoaDon>
+         <NgayHoaDon>2020-10-02T00:00:00</NgayHoaDon>
+         <HinhThucThanhToan>TM/CK</HinhThucThanhToan>
+         <MaTienTe>VND</MaTienTe>
+         <TyGia>1.00</TyGia>
+         <TenNguoiBan>CÔNG TY TNHH JULIANN</TenNguoiBan>
+         <MaSoThueNguoiBan>0316205557</MaSoThueNguoiBan>
+         <DiaChiNguoiBan>40 Đường 24B, Phường An Phú, Quận 2, Thành Phố Hồ Chí Minh, Việt Nam</DiaChiNguoiBan>
+         <DienThoaiNguoiBan />
+         <TaiKhoanBenBan />
+         <TenNguoiMua />
+         <TenDoanhNghiepMua>CÔNG TY TNHH EMIVEST FEEDMILL (TG) VIỆT NAM - CHI NHÁNH ĐỒNG THÁP</TenDoanhNghiepMua>
+         <MaSoThueNguoiMua>1201418945-004</MaSoThueNguoiMua>
+         <DiaChiNguoiMua>Lô II-5, II-6 và II-7, Khu C mở rộng, Khu công nghiệp Sa Đéc, Phường Tân Quy Đông, Thành phố Sa Đéc, Tỉnh Đồng Tháp, Việt Nam</DiaChiNguoiMua>
+         <TaiKhoanBenMua />
+         <SoDonHang />
+         <TongTienTruocThue>2100000.00</TongTienTruocThue>
+         <TongTienChietKhau>0.00</TongTienChietKhau>
+         <TongTienThue>210000.00</TongTienThue>
+         <TongTien>2310000.00</TongTien>
+         <ThanhTienBangChu>Hai triệu ba trăm mười nghìn đồng chẵn.</ThanhTienBangChu>
+         <NguoiDaiDienBan>VÕ THỊ HUỆ TRÍ</NguoiDaiDienBan>
+         <ChucVuBan>Giám Đốc</ChucVuBan>
+         <PT_Thue>10</PT_Thue>
+         <ma_dt />
+         <TongTienThue10>210000</TongTienThue10>
+         <TongTienTruocThue10>2100000</TongTienTruocThue10>
+         <sobaomat>02130E9AC5DB26A9</sobaomat>
+         <ten_nguoi_sd />
+         <phiBVMT>0</phiBVMT>
+      </ThongTinHoaDon>
+      <ChiTietHoaDon>
+         <ChiTiet>
+            <stt>1</stt>
+            <MaHang />
+            <TenHang>Khẩu trang vải</TenHang>
+            <SoLuong>300.000</SoLuong>
+            <DonGia>7000.00</DonGia>
+            <TienTruocThue>2100000</TienTruocThue>
+            <PhanTramChietKhau>0.00</PhanTramChietKhau>
+            <TienChietKhau>0.00</TienChietKhau>
+            <PhanTramThue>10.000</PhanTramThue>
+            <TienThue>210000.00</TienThue>
+            <ThanhTien>2310000</ThanhTien>
+         </ChiTiet>
+         <ChiTiet />
+         <ChiTiet />
+         <ChiTiet />
+         <ChiTiet />
+         <ChiTiet />
+         <ChiTiet />
+      </ChiTietHoaDon>
+   </HoaDon>
+   <CertifiedData>
+      <qrCodeData>82927AB7-97FE-4A34-A94C-9D4E76A2A903;0316205557;01GTKT0/001;AA/20E;0000007;02/10/2020;2310000.0000;1201418945-004;02130E9AC5DB26A9;L8XfF2yit10Amb7lOVn2VdGC7JvmOdro5nL3ryBvMyQGWDPTf3QLFHS/nQOD7eHZs+xcQHTXa/7KBY8MwEw1c5jvM3aIIODQHB/UM93ai5f+mPguAF0lbA3s/lMULutSId+L0+1zKkAEHHVPpM9aj/fDnOm66L9dQjwWFjHdiGdb3V25Gk+M7cjVtif8GuDfFdCFLDfvo7NtoG5zvMLMQn3z+gNqW5bftuFz83gvhYISfbu9qfrf4flnItsc25BzMLofH9wIUTcX3qaSVeK07tSLKdutHTdetw6YROnKY6E0CSt7yok3JRFMheFEBf1e3h/Qjl1sOlhza493nWRiWQ==</qrCodeData>
+      <ChuKySo>L8XfF2yit10Amb7lOVn2VdGC7JvmOdro5nL3ryBvMyQGWDPTf3QLFHS/nQOD7eHZs+xcQHTXa/7KBY8MwEw1c5jvM3aIIODQHB/UM93ai5f+mPguAF0lbA3s/lMULutSId+L0+1zKkAEHHVPpM9aj/fDnOm66L9dQjwWFjHdiGdb3V25Gk+M7cjVtif8GuDfFdCFLDfvo7NtoG5zvMLMQn3z+gNqW5bftuFz83gvhYISfbu9qfrf4flnItsc25BzMLofH9wIUTcX3qaSVeK07tSLKdutHTdetw6YROnKY6E0CSt7yok3JRFMheFEBf1e3h/Qjl1sOlhza493nWRiWQ==</ChuKySo>
+      <SoBaoMat>02130E9AC5DB26A9</SoBaoMat>
+      <NguoiKy />
+      <NgayKy>Ngày ký 02/10/2020 00:00:00</NgayKy>
+      <DonViKy>Được ký bởi CÔNG TY TNHH JULIANN</DonViKy>
+      <DonViPhanMem>Được ký bởi nhà cung cấp giải pháp Hóa đơn điện tử M-Invoice</DonViPhanMem>
+   </CertifiedData>
+   <Signatures>
+      <Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="seller">
+         <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+            <Reference URI="#data">
+               <Transforms>
+                  <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                  <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+               </Transforms>
+               <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+               <DigestValue>4uVT1GlCmDocxzaS4+F5ZxVCtqk=</DigestValue>
+            </Reference>
+         </SignedInfo>
+         <SignatureValue>L8XfF2yit10Amb7lOVn2VdGC7JvmOdro5nL3ryBvMyQGWDPTf3QLFHS/nQOD7eHZs+xcQHTXa/7KBY8MwEw1c5jvM3aIIODQHB/UM93ai5f+mPguAF0lbA3s/lMULutSId+L0+1zKkAEHHVPpM9aj/fDnOm66L9dQjwWFjHdiGdb3V25Gk+M7cjVtif8GuDfFdCFLDfvo7NtoG5zvMLMQn3z+gNqW5bftuFz83gvhYISfbu9qfrf4flnItsc25BzMLofH9wIUTcX3qaSVeK07tSLKdutHTdetw6YROnKY6E0CSt7yok3JRFMheFEBf1e3h/Qjl1sOlhza493nWRiWQ==</SignatureValue>
+         <KeyInfo>
+            <X509Data>
+               <X509SubjectName>Phone=0938411841, E=hotrothue.ca@gmail.com, OID.0.9.2342.19200300.100.1.1=MST:0316205557, CN=CÔNG TY TNHH JULIANN, O=CÔNG TY TNHH JULIANN, S=TP Hồ Chí Minh, C=VN</X509SubjectName>
+               <X509Certificate>MIIEuDCCA6CgAwIBAgIQVAEOAHn9cFmYPy0Ea+w+TDANBgkqhkiG9w0BAQsFADBWMQswCQYDVQQGEwJWTjEvMC0GA1UECgwmSE4gSU5WRVNUTUVOVCBBTkQgQlVTSU5FU1MgU1VQUE9SVCBKU0MxFjAUBgNVBAMMDU5DLUNBIFNIQS0yNTYwHhcNMjAwMzIxMDUyMjEzWhcNMjMwMzIxMDUyMjEzWjCBxTELMAkGA1UEBhMCVk4xGjAYBgNVBAgMEVRQIEjhu5MgQ2jDrSBNaW5oMR4wHAYDVQQKDBVDw5RORyBUWSBUTkhIIEpVTElBTk4xHjAcBgNVBAMMFUPDlE5HIFRZIFROSEggSlVMSUFOTjEeMBwGCgmSJomT8ixkAQEMDk1TVDowMzE2MjA1NTU3MSUwIwYJKoZIhvcNAQkBFhZob3Ryb3RodWUuY2FAZ21haWwuY29tMRMwEQYDVQQUEwowOTM4NDExODQxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAm64BwY3t300PjNYpC4HuHYgmj0C053eT3kOnbHts8YgHZCIY1Qn2SrAEqFsXzu/oUYBC5ai0/Sg84pr7g0kiafaxfycOxXczWpFdo6U+y2a5HVnDkMYjlQl93abAOvXxJiB2NrNjhgcEySNiFiWvVDMGbiFSEYJ6SGLVsPqzMzx07WNSs/4lK4iQUYX6CJslrGf/X6wbNdBwmFCK9Z7+/O/+osbUaidfQpDFJZ6/UwZe8TjGWx+otT9hdVc/Zk9Zz0xo3qY0ZsTYSz5fxMSCourDEhNXf0ZAF6EOmLtpfSEpncQrGtSjFbt3ZoaGjlfGQXH1OR7I7P8ScFxaQ/NwMwIDAQABo4IBEDCCAQwwDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBT3ZHpBf/nM6iHCzRM1ZxK4w3pBnDA6BggrBgEFBQcBAQQuMCwwKgYIKwYBBQUHMAGGHmh0dHA6Ly9vY3NwLm5jLWNhLnZuL3Jlc3BvbmRlcjAhBgNVHREEGjAYgRZob3Ryb3RodWUuY2FAZ21haWwuY29tMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDBDAuBgNVHR8EJzAlMCOgIaAfhh1odHRwOi8vY3JsLm5jLWNhLnZuL25jLWNhLmNybDAdBgNVHQ4EFgQUCL9TP8VL/0WDAUxTLInNtUSSuUwwDgYDVR0PAQH/BAQDAgXgMA0GCSqGSIb3DQEBCwUAA4IBAQBYuNhNq4xqkffJBXtocAi+ESFHTSOhi4uOv78ADN2S+vsCzWT0CM38IZnR8M87zWJs/d41LHOPzCTyPQu0kh9M15yjtYNihOecVVY3O2192PJ1JEgUVczKAK5CdIpRxwINEZUtx+9qqEahiF419tcyNefiYg/8+ewuVBH4qKaypttsUdZpfRh9p1q5F6HOIeY0VrmhlytNjxHTZk4H3zHJqQV/wvj/yhX//mR6aqIRBEzr7v/N8vQ7Y0xLB/zHzVYMzd1WrkpTa3giFDx0TR/ewe2eDh7oLY7Pj//tyqhVDXYTaLOMV0Ihmv8iJVFor+HAcCyfbyyOtk1Vskw02pXj</X509Certificate>
+            </X509Data>
+         </KeyInfo>
+      </Signature>
+      <Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="minvoice">
+         <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+            <Reference URI="#data">
+               <Transforms>
+                  <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                  <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+               </Transforms>
+               <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+               <DigestValue>4uVT1GlCmDocxzaS4+F5ZxVCtqk=</DigestValue>
+            </Reference>
+         </SignedInfo>
+         <SignatureValue>T8bF90vDt2vbHsTlb3dkSg4T9TedDL6MfNJptXR4tUcHhBz4VISw9LxZxqeIrqVHbO90maYd45u//I2okgsE3/TD0IEKsYEJOMmBg3aFcHaYwKK7ek9CyRTxXHiMq0KXGvY003NK77w2HEwaoQcfJeO6CWFUeavX88hidXFdum12yKXPYNjasKNCLW6cu/0MY9CatjazDwm2xMFd/X3jSDVGdi71DQNfQc+vUH0brcAcfZPM50YgU00lqXxIyfxATvRHHsJb0R+Af9H9LT3SSNlXkEhKXExg5qL3rTTl+0hOQr8+x09hyzufQmAtlqnR8OdgSyAc6fUJ7SIZWsKH/w==</SignatureValue>
+         <KeyInfo>
+            <KeyValue>
+               <RSAKeyValue>
+                  <Modulus>veEt/jejG8mn3jGWXRpBrVhtcT662tGpKNiI3OGAVWmKOz77jVWJqyyAatnAjQuFJpQ30Ma4GKUbA2qp1SVNQR7XjKVp7tkvTPPWu9GIUly3pO+OT3KZMzF0piFnUxMWLiy6mVRXimTGRtHfQsdGjDPJ1jlnW84FONYSMg1+8UliQgzXA0Q9mY4y9c8ppVwQpkrc5aFcEWU1VVMOuxpAbONiqZkVrQDRHQwXk9Pm86bX0EQSzg9b04AZKKleSQej+wI1yDKvLt/LQuIXnzfwyLgInfCvW1Nc1wEjZ4Zv/ojpqWh+AgE3y+mnWNBHiFKo1fNaINmoHPKwbLgSpo1AwQ==</Modulus>
+                  <Exponent>AQAB</Exponent>
+               </RSAKeyValue>
+            </KeyValue>
+            <X509Data>
+               <X509SubjectName>CN=CONG TY TNHH HOA DON DIEN TU M-INVOICE  MST:0106026495, O=CONG TY TNHH HOA DON DIEN TU M-INVOICE, L=Hoang Mai, S=Ha Noi, C=VN</X509SubjectName>
+               <X509Certificate>MIIC3zCCAomgAwIBAgIQITD9Suzl/JFMvmFcQniO+zANBgkqhkiG9w0BAQsFADAWMRQwEgYDVQQDEwtSb290IEFnZW5jeTAeFw0xNzEyMzExNzAwMDBaFw00OTEyMzExNzAwMDBaMIGkMQswCQYDVQQGEwJWTjEPMA0GA1UECBMGSGEgTm9pMRIwEAYDVQQHEwlIb2FuZyBNYWkxLzAtBgNVBAoTJkNPTkcgVFkgVE5ISCBIT0EgRE9OIERJRU4gVFUgTS1JTlZPSUNFMT8wPQYDVQQDEzZDT05HIFRZIFROSEggSE9BIERPTiBESUVOIFRVIE0tSU5WT0lDRSAgTVNUOjAxMDYwMjY0OTUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC94S3+N6MbyafeMZZdGkGtWG1xPrra0ako2Ijc4YBVaYo7PvuNVYmrLIBq2cCNC4UmlDfQxrgYpRsDaqnVJU1BHteMpWnu2S9M89a70YhSXLek745PcpkzMXSmIWdTExYuLLqZVFeKZMZG0d9Cx0aMM8nWOWdbzgU41hIyDX7xSWJCDNcDRD2ZjjL1zymlXBCmStzloVwRZTVVUw67GkBs42KpmRWtANEdDBeT0+bzptfQRBLOD1vTgBkoqV5JB6P7AjXIMq8u38tC4hefN/DIuAid8K9bU1zXASNnhm/+iOmpaH4CATfL6adY0EeIUqjV81og2agc8rBsuBKmjUDBAgMBAAGjXDBaMA8GA1UdEwEB/wQFMAMBAf8wRwYDVR0BBEAwPoAQEuQJLQYdHU8AjWEh3BZkY6EYMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5ghAGN2wAqgBkihHPuNSqXDX0MA0GCSqGSIb3DQEBCwUAA0EAY0elmV8ysHliUMM18o+OQSUjrficFwvs+9sa0qB7p+zmxB+hyIf84NwZ8mP1LPUq3h95MNeNUvWLSfpOdrXo7A==</X509Certificate>
+            </X509Data>
+         </KeyInfo>
+      </Signature>
+   </Signatures>
+</HoaDonDienTu>

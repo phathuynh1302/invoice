@@ -43,3 +43,78 @@
 .ant-select-selection-search-input {
   height: 50px !important;
 }
+
+.ant-input-disabled {
+  color: black !important;
+}
+.ant-table-thead .ant-table-cell {
+  background-color: rgb(94, 79, 255) !important;
+  color: aliceblue !important;
+  font-size: medium;
+  font-weight: bold !important;
+}
+
+.anticon-right,
+.anticon-left {
+  color: white !important;
+}
+
+.ant-pagination-item {
+  background-color: rgb(150, 150, 150) !important;
+}
+
+.ant-pagination-item-active {
+  background-color: rgb(255, 255, 255) !important;
+  color: rgb(13, 0, 255);
+}
+
+.notification-box {
+  position: fixed;
+  z-index: 99;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  height: 50px;
+  text-align: center;
+}
+.notification-count {
+  position: absolute;
+  z-index: 1;
+  top: 14px;
+  right: 89px;
+  width: 19px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 16px;
+  border-radius: 50%;
+  background-color: #ff4927;
+  color: #fff;
+}
+
+.centerAll {
+  text-align: -webkit-center;
+}
+
+.ant-card-head {
+  min-height: 10px !important;
+  padding: 0px !important;
+}
+
+.ant-card-body {
+  padding: 8px 24px !important;
+}
+
+.ant-modal-content {
+  text-align-last: center !important;
+  padding: 30px 30px !important;
+  margin: 30px 30px !important;
+}
+
+.ant-form-item-explain-error {
+  color: #ff3e3e !important;
+  font-weight: 600;
+}
+
+/* .anticon-star {
+  color: #ffffff59;
+} */

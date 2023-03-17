@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import {
+  CImage,
   CSidebar,
   CSidebarBrand,
   CSidebarNav,
@@ -11,8 +12,8 @@ import CIcon from "@coreui/icons-react";
 
 import { AppSidebarNav } from "./AppSidebarNav";
 
-import { logoNegative } from "../assets/brand/logo-negative.js";
-import { sygnet } from "../assets/brand/sygnet";
+import logoNegative from "../images/logo1.png";
+// import { sygnet } from "../assets/brand/sygnet";
 
 import SimpleBar from "simplebar-react";
 import "simplebar/dist/simplebar.min.css";
@@ -35,8 +36,12 @@ const AppSidebar = () => {
       }}
     >
       <CSidebarBrand className="d-none d-md-flex" to="/">
-        <CIcon className="sidebar-brand-full" icon={logoNegative} height={35} />
-        <CIcon className="sidebar-brand-narrow" icon={sygnet} height={35} />
+        <CImage
+          className="sidebar-brand-full"
+          src={logoNegative}
+          width="100%"
+        />
+        <CIcon className="sidebar-brand-narrow" height={35} />
       </CSidebarBrand>
       <CSidebarNav>
         <SimpleBar>

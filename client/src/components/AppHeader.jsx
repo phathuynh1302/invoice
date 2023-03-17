@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   CContainer,
   CHeader,
-  CHeaderBrand,
   CHeaderDivider,
   CHeaderNav,
   CHeaderToggler,
@@ -12,11 +11,11 @@ import {
   CNavItem,
 } from "@coreui/react";
 import CIcon from "@coreui/icons-react";
-import { cilBell, cilEnvelopeOpen, cilList, cilMenu } from "@coreui/icons";
+import { cilBell, cilMenu } from "@coreui/icons";
 
 import { AppBreadcrumb } from "./index";
 import { AppHeaderDropdown } from "./header/index";
-import { logo } from "../assets/brand/logo.js";
+import logo from "../images/logo.png";
 
 const AppHeader = () => {
   const dispatch = useDispatch();
@@ -31,39 +30,26 @@ const AppHeader = () => {
         >
           <CIcon icon={cilMenu} size="lg" />
         </CHeaderToggler>
-        <CHeaderBrand className="mx-auto d-md-none" to="/">
-          <CIcon icon={logo} height={48} alt="Logo" />
-        </CHeaderBrand>
-        <CHeaderNav className="d-none d-md-flex me-auto">
+
+        <CHeaderNav className="d-md-flex me-auto ">
           <CNavItem>
-            <CNavLink to="/dashboard" component={NavLink}>
+            <CNavLink to="/dashboard" component={NavLink} className="font-bold">
               Dashboard
             </CNavLink>
           </CNavItem>
+
           <CNavItem>
-            <CNavLink href="#">Users</CNavLink>
-          </CNavItem>
-          <CNavItem>
-            <CNavLink href="#">Settings</CNavLink>
-          </CNavItem>
-        </CHeaderNav>
-        <CHeaderNav>
-          <CNavItem>
-            <CNavLink href="#">
-              <CIcon icon={cilBell} size="lg" />
-            </CNavLink>
-          </CNavItem>
-          <CNavItem>
-            <CNavLink href="#">
-              <CIcon icon={cilList} size="lg" />
-            </CNavLink>
-          </CNavItem>
-          <CNavItem>
-            <CNavLink href="#">
-              <CIcon icon={cilEnvelopeOpen} size="lg" />
+            <CNavLink to="/users" component={NavLink} className="font-bold">
+              Manage user
             </CNavLink>
           </CNavItem>
         </CHeaderNav>
+        {/* <CHeaderNav>
+          <span className="notification-count">
+            <p className="ml-1">5</p>
+          </span>
+          <CIcon icon={cilBell} size="xxl" className="mt-2" />
+        </CHeaderNav> */}
         <CHeaderNav className="ms-3">
           <AppHeaderDropdown />
         </CHeaderNav>

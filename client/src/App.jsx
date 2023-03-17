@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Routes, useLocation } from "react-router-dom";
 import { Suspense } from "react";
 import { Route } from "react-router-dom";
-import "./scss/style.scss";
+import "./css/scss/style.scss";
 
 import "aos/dist/aos.css";
 import "./css/style.css";
@@ -10,6 +10,10 @@ import "./css/style.css";
 import AOS from "aos";
 
 import { Spin } from "antd";
+import UserProfile from "./views/UserProfile";
+import AuthContextProvider from "./contexts/AuthContext";
+import Auth from "./views/Auth";
+import ProtectedRoute from "./routes/ProtectedRoute";
 
 function App() {
   const location = useLocation();
@@ -21,23 +25,12 @@ function App() {
       </Spin>{" "}
     </div>
   );
-  const HomeAuthenticated = React.lazy(() =>
-    import("./pages/HomeAuthenticated")
-  );
   const HomeNotAuthenticated = React.lazy(() =>
-    import("./pages/HomeNotAuthenticated")
+    import("./views/HomeNotAuthenticated")
   );
-  const ResetPassword = React.lazy(() => import("./pages/ResetPassword"));
-  const SignIn = React.lazy(() => import("./pages/SignIn"));
-  const SignUp = React.lazy(() => import("./pages/SignUp"));
-
+  const ResetPassword = React.lazy(() => import("./views/ResetPassword"));
   const DefaultLayout = React.lazy(() => import("./layout/DefaultLayout"));
 
-  // Pages
-  const Login = React.lazy(() => import("./views/pages/login/Login"));
-  const Register = React.lazy(() => import("./views/pages/register/Register"));
-  const Page404 = React.lazy(() => import("./views/pages/page404/Page404"));
-  const Page500 = React.lazy(() => import("./views/pages/page500/Page500"));
   useEffect(() => {
     AOS.init({
       once: true,
@@ -54,18 +47,23 @@ function App() {
   }, [location.pathname]); // triggered on route change
 
   return (
-    <Suspense fallback={loading}>
-      <Routes>
-        <Route exact path="/" element={<HomeNotAuthenticated />} />
-        <Route path="/home" element={<HomeAuthenticated />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
-        <Route path="/404" name="Page 404" element={<Page404 />} />
-        <Route path="/500" name="Page 500" element={<Page500 />} />
-        <Route path="*" name="Home" element={<DefaultLayout />} />
-      </Routes>
-    </Suspense>
+    <AuthContextProvider>
+      <Suspense fallback={loading}>
+        <Routes>
+          <Route exact path="/" element={<HomeNotAuthenticated />} />
+
+          <Route exact path="/signin" element={<Auth authRoute="signin" />} />
+          <Route exact path="/signup" element={<Auth authRoute="signup" />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+
+          <Route
+            path="*"
+            name="Home"
+            element={<ProtectedRoute component={DefaultLayout} />}
+          />
+        </Routes>
+      </Suspense>
+    </AuthContextProvider>
   );
 }
 

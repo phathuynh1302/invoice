@@ -6,9 +6,9 @@ const AppFooter = () => {
     <CFooter>
       <div>
         <a href="https://coreui.io" target="_blank" rel="noopener noreferrer">
-          CoreUI
+          E-invoiceconvert
         </a>
-        <span className="ms-1">&copy; 2022 creativeLabs.</span>
+        <span className="ms-1">&copy; 2023 creativeLabs.</span>
       </div>
       <div className="ms-auto">
         <span className="me-1">Powered by</span>
@@ -17,7 +17,7 @@ const AppFooter = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          CoreUI React Admin &amp; Dashboard Template
+          E-invoiceconvert Admin
         </a>
       </div>
     </CFooter>
