@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inv:invoice xmlns:inv="http://laphoadon.gdt.gov.vn/2014/09/invoicexml/v1" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+   <inv:invoiceData id="data">
+      <inv:invoiceType>01GTKT</inv:invoiceType>
+      <inv:templateCode>01GTKT0/001</inv:templateCode>
+      <inv:invoiceSeries>CG/19E</inv:invoiceSeries>
+      <inv:invoiceNumber>0002532</inv:invoiceNumber>
+      <inv:invoiceName>Hóa đơn giá trị gia tăng</inv:invoiceName>
+      <inv:invoiceIssuedDate>2021-04-07T00:00:00</inv:invoiceIssuedDate>
+      <inv:signedDate>2021-04-07T16:27:17</inv:signedDate>
+      <inv:currencyCode>VND</inv:currencyCode>
+      <inv:adjustmentType>1</inv:adjustmentType>
+      <inv:payments>
+         <inv:payment>
+            <inv:paymentMethodName>TM/CK</inv:paymentMethodName>
+         </inv:payment>
+      </inv:payments>
+      <inv:delivery />
+      <inv:sellerLegalName>CÔNG TY TNHH CỤC GẠCH</inv:sellerLegalName>
+      <inv:sellerTaxCode>0314810809</inv:sellerTaxCode>
+      <inv:sellerAddressLine>92 B Thạch Thị Thanh, Phường Tân Định, Quận 1, Thành phố Hồ Chí Minh, Việt Nam</inv:sellerAddressLine>
+      <inv:sellerPhoneNumber>(028) 3526 7826 ; (028) 3848 0144</inv:sellerPhoneNumber>
+      <inv:sellerFaxNumber />
+      <inv:sellerEmail />
+      <inv:sellerWebSite />
+      <inv:sellerBankAccount />
+      <inv:sellerBankName />
+      <inv:buyerLegalName>CÔNG TY TNHH D&amp;D CARE</inv:buyerLegalName>
+      <inv:buyerTaxCode>0316156282</inv:buyerTaxCode>
+      <inv:buyerAddressLine>247/23 Bùi Đình Tuý, Phường 24, Quận Bình Thạnh, Thành phố Hồ Chí Minh, Việt Nam</inv:buyerAddressLine>
+      <inv:deliveryOrderDate>1900-01-01T00:00:00</inv:deliveryOrderDate>
+      <inv:exchangeRate>1.00</inv:exchangeRate>
+      <inv:items>
+         <inv:item>
+            <inv:lineNumber>1</inv:lineNumber>
+            <inv:itemCode>ANUONG_TM</inv:itemCode>
+            <inv:itemName>Thức ăn, thức uống</inv:itemName>
+            <inv:quantity>0.00</inv:quantity>
+            <inv:itemTotalAmountWithoutVat>1445455</inv:itemTotalAmountWithoutVat>
+            <inv:vatPercentage>10</inv:vatPercentage>
+            <inv:vatAmount>144545</inv:vatAmount>
+            <inv:unitPrice>0.00</inv:unitPrice>
+            <inv:promotion>0</inv:promotion>
+         </inv:item>
+	<inv:item>
+            <inv:lineNumber>2</inv:lineNumber>
+            <inv:itemCode>ANUONG_TM2</inv:itemCode>
+            <inv:itemName>Thức ăn, thức uống</inv:itemName>
+            <inv:quantity>10</inv:quantity>
+            <inv:itemTotalAmountWithoutVat>1445455</inv:itemTotalAmountWithoutVat>
+            <inv:vatPercentage>10</inv:vatPercentage>
+            <inv:vatAmount>144545</inv:vatAmount>
+            <inv:unitPrice>0.00</inv:unitPrice>
+            <inv:promotion>0</inv:promotion>
+         </inv:item>
+      </inv:items>
+      <inv:invoiceTaxBreakdowns>
+         <inv:invoiceTaxBreakdown>
+            <inv:vatPercentage>10</inv:vatPercentage>
+         </inv:invoiceTaxBreakdown>
+      </inv:invoiceTaxBreakdowns>
+      <inv:totalAmountWithoutVAT>1445455</inv:totalAmountWithoutVAT>
+      <inv:totalVATAmount>144545</inv:totalVATAmount>
+      <inv:totalAmountWithVAT>1590000</inv:totalAmountWithVAT>
+      <inv:totalAmountWithVATInWords>Một triệu năm trăm chín mươi nghìn đồng chẵn.</inv:totalAmountWithVATInWords>
+      <inv:discountAmount>0</inv:discountAmount>
+      <inv:isDiscountAmtPos>0</inv:isDiscountAmtPos>
+      <inv:totalAmountWithVATFrn>1590000</inv:totalAmountWithVATFrn>
+      <inv:userDefines><![CDATA[<TransactionID>6VUZH7J4299</TransactionID><InvoiceRefID>49051c62-5ff8-44fb-9357-5f614b227b38</InvoiceRefID><InvoiceTemplateID>5eabf452-92a9-4a04-b4cc-c628d25cc4f4</InvoiceTemplateID><MainCurrency>VND</MainCurrency><UnitPriceDecimalDigits>2</UnitPriceDecimalDigits><UnitPriceOCDecimalDigits>2</UnitPriceOCDecimalDigits><QuantityDecimalDigits>2</QuantityDecimalDigits><AmountDecimalDigits>0</AmountDecimalDigits><AmountOCDecimalDigits>2</AmountOCDecimalDigits><ExchangRateDecimalDigits>2</ExchangRateDecimalDigits><CoefficientDecimalDigits>2</CoefficientDecimalDigits><AccountObjectCode>CTY_D&amp;D CARE</AccountObjectCode><TrsContractNo></TrsContractNo><TrsBLNo></TrsBLNo><TrsNameVessel></TrsNameVessel><TrsFlag></TrsFlag><TrsArrival></TrsArrival><TrsDeparture></TrsDeparture><RoomNo></RoomNo><CheckIn></CheckIn><CheckOut></CheckOut><ExciseTaxRate></ExciseTaxRate><ExciseTaxAmount></ExciseTaxAmount><ExciseTaxAmountOC></ExciseTaxAmountOC><TypeDiscount></TypeDiscount><UserItems><UserItem><LineNumber>1</LineNumber><AmountOC>1445455 </AmountOC><VATAmountOC>144545 </VATAmountOC><DiscountRate>0.00 </DiscountRate><DiscountAmountOC>0 </DiscountAmountOC><DiscountAmount>0 </DiscountAmount><InventoryItemType>2</InventoryItemType><InWards>0</InWards><UnitPriceAfterTax>0.00 </UnitPriceAfterTax><AmountAfterTax>0 </AmountAfterTax><PanelLengthQuantity>0.00 </PanelLengthQuantity><PanelWidthQuantity>0.00 </PanelWidthQuantity><PanelHeightQuantity>0.00 </PanelHeightQuantity><PanelRadiusQuantity>0.00 </PanelRadiusQuantity><PanelQuantity>0.00 </PanelQuantity><RowType>0</RowType><MainConvertRate>1.00 </MainConvertRate><MainQuantity>0.00 </MainQuantity><MainUnitPrice>0.00 </MainUnitPrice></UserItem></UserItems>]]></inv:userDefines>
+   </inv:invoiceData>
+   <inv:controlData>
+      <inv:systemCode>LHD_MISA</inv:systemCode>
+   </inv:controlData>
+   <Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="seller">
+      <SignedInfo>
+         <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+         <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+         <Reference URI="#data">
+            <Transforms>
+               <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            </Transforms>
+            <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+            <DigestValue>GdfpI3cCffC/Xnzd//k/Vg2kHHw=</DigestValue>
+         </Reference>
+      </SignedInfo>
+      <SignatureValue>f3+FvmmaMPfDcvkZM1uAHGGRRgwCteLvPWCBgrWRcwQjrDhL5AMpwIJ60vwSPiUTPfATFGAJN0my1Spw8dX2LLe9UIBdJWwNdn+G9B447xeOHBEGM3hxIIzWgazgTomb/6Oi4m97FlrfV3t4BYaXPkqOUNbl5o3JdKAGFO4aUd4=</SignatureValue>
+      <KeyInfo>
+         <X509Data>
+            <X509SubjectName>OID.0.9.2342.19200300.100.1.1=MST:0314810809, CN=CÔNG TY TNHH CỤC GẠCH, L=Quận 1, S=Hồ Chí Minh, C=VN</X509SubjectName>
+            <X509Certificate>MIIFojCCA4qgAwIBAgIQVAEBATD20x9Tq1RrNNjbmTANBgkqhkiG9w0BAQUFADBpMQswCQYDVQQGEwJWTjETMBEGA1UEChMKVk5QVCBHcm91cDEeMBwGA1UECxMVVk5QVC1DQSBUcnVzdCBOZXR3b3JrMSUwIwYDVQQDExxWTlBUIENlcnRpZmljYXRpb24gQXV0aG9yaXR5MB4XDTE5MTEyMjA3MDUwMFoXDTIyMTIwNzEzNTgwMFowfjELMAkGA1UEBhMCVk4xFzAVBgNVBAgMDkjhu5MgQ2jDrSBNaW5oMREwDwYDVQQHDAhRdeG6rW4gMTEjMCEGA1UEAwwaQ8OUTkcgVFkgVE5ISCBD4bukQyBH4bqgQ0gxHjAcBgoJkiaJk/IsZAEBDA5NU1Q6MDMxNDgxMDgwOTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAs6nHF+k7vxv08s1w5lngYxKwpzx6V+4ZQyT0JASTnFnLVm4gese3T7IAqUOWMBigV8urp1l9VYrZuXC3rwwo2m7cxHjgjE8XDdZ8x3PxJ6SInflu0CFkV0FZIf1sj64uucFEbV6gEnXhJ3kpUY0x28oQ+pMFpJZ5moaXKMGfwLMCAwEAAaOCAbMwggGvMHAGCCsGAQUFBwEBBGQwYjAyBggrBgEFBQcwAoYmaHR0cDovL3B1Yi52bnB0LWNhLnZuL2NlcnRzL3ZucHRjYS5jZXIwLAYIKwYBBQUHMAGGIGh0dHA6Ly9vY3NwLnZucHQtY2Eudm4vcmVzcG9uZGVyMB0GA1UdDgQWBBQAABdL10O+fQlyxR+6wV6syRIedzAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFAZpwNXVAooVjUZ96XziaApVrGqvMGgGA1UdIARhMF8wXQYOKwYBBAGB7QMBAQMBAQEwSzAiBggrBgEFBQcCAjAWHhQATwBJAEQALQBTAFQALQAxAC4AMDAlBggrBgEFBQcCARYZaHR0cDovL3B1Yi52bnB0LWNhLnZuL3JwYTAxBgNVHR8EKjAoMCagJKAihiBodHRwOi8vY3JsLnZucHQtY2Eudm4vdm5wdGNhLmNybDAOBgNVHQ8BAf8EBAMCBPAwIAYDVR0lBBkwFwYKKwYBBAGCNwoDDAYJKoZIhvcvAQEFMB4GA1UdEQQXMBWBE2tldG9hbkB0cmFuYmluaC5jb20wDQYJKoZIhvcNAQEFBQADggIBADVKdjtvPt2k2q5+g95JAhC44MIihUrPW+lSAhjxS9J3ekeHJiz/s8gnwOGx5af1bTg10U9IPrRYLa7D9DiOfCq/g1g8uqkUxJ5bD5VZK+/cNi8Q/3mdQm+ZlOTXNBLNeOyG7AHFXBe9+GOG/BKnq93c8XviPamMal8FgnftJbnuMAOij8R4QDHO+KGw6MGFBbZGaa0O4h3VBPmTqIZHn3HNeC8Ikxl3I5nY0o7Z+XeP0YWmAzGa08vIFwFLSnIitgv6FJFV1LQIvuECQPmNXTsG3W+8iqBcPxQgOJN0aH+GpWP7Rc8VZcx3xvpPj+u8JcXr+5078QpNlw21XeFGMFWL6Kd1MPmqvNJCLYsNi1v5kl657I1m0Tel63ob1EYT91C6S1brnA53mBss54vYsmJc9wR+Rojt2I1vYxD9j8OAkKL0gyXph7io1sGyRG/Q9iV/yrQg7sE6mVdQ8OQ8DZcP3b40zlHK+AkNSVdFK+/bp0ymsGIibYds4DGuglEIPFEB0mtPE1cT1zLyV+Lvx+UROqS9VS+BqjtJNVpoShEchrPtgIECxWNVh3IIMX+7AkQxVIkCFluyPnwh1sGj3jPLxT4bt/rDW35iT9x6YzRUyROWFt9S4pBp1lI9cfGovsSxNHul8mqPMv30YtZu2cq5h/qU093dmOB2AX5zA6IL</X509Certificate>
+         </X509Data>
+      </KeyInfo>
+   </Signature>
+</inv:invoice>
